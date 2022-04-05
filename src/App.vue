@@ -4,5 +4,11 @@
 </template>
 
 <script>
-export default {};
+import Calendar from "./views/Calendar.vue"
+export default {
+  name: "App",
+  views: {//Revisar si esto esta bien..............
+    Calendar
+  },
+};
 </script>
