@@ -236,3 +236,11 @@
 //           <div v-on:click="selectDay" v-for="day in contextMonthDays" v-bind:id='contextYear + "-" + contextMonth + "-" + day' class="day_box">{{day}}</div>
 //     </div>
 // </div>
+
+
+
+// function isLeap(year) {
+//   return ((year % 100 !== 0) && (year % 4 === 0) || (year % 400 === 0)
+//       )}
+
+// console.log(isLeap(2022))
