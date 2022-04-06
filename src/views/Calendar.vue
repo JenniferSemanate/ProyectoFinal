@@ -4,7 +4,9 @@
   <div class="container mx-auto border">
     <!-- navbar -->
     <div class="flex justify-between gap-5 p-2">
-      <button @click="lastMonth"><i class="fa-solid fa-angle-left"></i></button>
+      <button @click="lastMonth">
+        <i class="fa-solid fa-angle-left"></i>
+      </button>
       <!-- Crear los eventos -->
       <div v-for="month in monthNames" :key="month"></div>
       <p>{{ monthNames[month] }}</p>
@@ -52,6 +54,7 @@ export default {
         "November",
         "December",
       ],
+      today: "",
       day: "",
       month: "",
       year: "",
@@ -60,6 +63,11 @@ export default {
     };
   },
   computed: {
+    today() {
+      let currentDate = new Date();
+      this.today = currentDate.getDate;
+      return `${this.today}`;
+    },
     day() {
       let currentDate = new Date();
       this.day = currentDate.getDay();
@@ -111,9 +119,9 @@ export default {
     },
 
     setNewDate() {
-      currentDate.setFullYear(this.year, this.month, this.day);
-      for (let i = 0; i < monthNames.length; i++) {
-        const month = monthNames[i];
+      this.today.setFullYear(this.year, this.month, this.day);
+      for (let i = 0; i < this.monthNames.length; i++) {
+        const month = monthNames[month];
         return month;
       }
       //  <div v-for="month in monthNames" :key="month"></div>
