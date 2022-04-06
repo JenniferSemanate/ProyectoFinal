@@ -4,7 +4,7 @@
   <div class="container mx-auto border">
     <!-- navbar -->
     <div class="flex justify-between gap-5 p-2">
-      <button @click="lastMonth">
+      <button :class="lastMonth" @click="lastMonth">
         <i class="fa-solid fa-angle-left"></i>
       </button>
       <!-- Crear los eventos -->
@@ -13,7 +13,7 @@
       <!--dato computado-->
       <p>{{ year }}</p>
       <!--dato computado-->
-      <button @click="nextMonth">
+      <button :class="nextMonth" @click="nextMonth">
         <i class="fa-solid fa-angle-right"></i>
       </button>
       <!-- Crear los eventos -->
