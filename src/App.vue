@@ -1,5 +1,4 @@
 <template>
-  <h1>Proyecto Final</h1>
   <RouterView />
 </template>
 

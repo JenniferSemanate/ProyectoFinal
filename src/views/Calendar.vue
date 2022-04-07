@@ -1,49 +1,40 @@
 <template>
   <div>
-    <h1>Calendar</h1>
-    <!-- <h2>{{ lastMonth(3) }}</h2> -->
-    <!-- <h2>{{ setNewDate() }}</h2>
-    <h3>{{ getTotalDays() }}</h3>
-    <h4>{{ writeMonth(month) }}</h4> -->
+    <h1 class="uppercase font-bold text-2xl text-center">Calendar</h1>
     <div class="container mx-auto border">
       <!-- navbar -->
       <div class="flex justify-between gap-5 p-2">
         <button @click="lastMonth">
           <i class="fa-solid fa-angle-left"></i>
         </button>
-        <!-- Crear los eventos -->
-
         <p>{{ monthNames[month] }}</p>
-        <!--dato computado-->
         <p>{{ year }}</p>
-        <!--dato computado-->
         <button @click="nextMonth">
           <i class="fa-solid fa-angle-right"></i>
         </button>
-        <!-- Crear los eventos -->
       </div>
       <!-- calendario week -->
       <div class="grid grid-cols-7 text-center">
-        <li class="bg-gray-200 font-bold text-xs p-2">Lun</li>
-        <li class="bg-gray-200 font-bold text-xs p-2">Mar</li>
-        <li class="bg-gray-200 font-bold text-xs p-2">Mie</li>
-        <li class="bg-gray-200 font-bold text-xs p-2">Jue</li>
-        <li class="bg-gray-200 font-bold text-xs p-2">Vie</li>
-        <li class="bg-gray-200 font-bold text-xs p-2">Sáb</li>
-        <li class="bg-gray-200 font-bold text-xs p-2">Dom</li>
+        <div class="bg-gray-200 font-bold text-xs p-2">Mon</div>
+        <div class="bg-gray-200 font-bold text-xs p-2">Tue</div>
+        <div class="bg-gray-200 font-bold text-xs p-2">Wed</div>
+        <div class="bg-gray-200 font-bold text-xs p-2">Thu</div>
+        <div class="bg-gray-200 font-bold text-xs p-2">Fri</div>
+        <div class="bg-gray-200 font-bold text-xs p-2">Sat</div>
+        <div class="bg-gray-200 font-bold text-xs p-2">Sun</div>
+      
       </div>
       <div class="grid grid-cols-7">
-        <!-- DIAS VACIOS -->
+        <!-- Dias vacios -->
         <div v-for="n in diasVacios" :key="n" class="bg-gray-100"></div>
         <!-- calendario days -->
         <div v-for="day in days" :key="day" class="p-6">
-          <div
-            :class="{ 'bg-red-500 text-white': isItToday(day) }"
-            class="rounded-full text-center"
-          >
-            {{ day.getDate() }}
+          <div :class="{ 'bg-red-500 text-white': isItToday(day) }"
+            class="rounded-full text-center">
+               <RouterLink :to="`/notas/`">{{ day.getDate() }}</RouterLink>
           </div>
-          <!-- <span class="text-gray-400">{{ day.getDay() }}</span> -->
+          <!-- <span class="text-gray-400">{{ day.getDay() }}</span> con esto podemos ver el di
+        ía pero por numero-->
         </div>
       </div>
     </div>
@@ -75,8 +66,8 @@ export default {
   },
   computed: {
     days() {
-      var date = new Date(this.year, this.month, 1);
-      var days = [];
+      let date = new Date(this.year, this.month, 1);
+      let days = [];
       while (date.getMonth() === this.month) {
         days.push(new Date(date));
         date.setDate(date.getDate() + 1);
