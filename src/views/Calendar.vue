@@ -22,19 +22,24 @@
         <div class="bg-gray-200 font-bold text-xs p-2">Fri</div>
         <div class="bg-gray-200 font-bold text-xs p-2">Sat</div>
         <div class="bg-gray-200 font-bold text-xs p-2">Sun</div>
-      
       </div>
       <div class="grid grid-cols-7">
         <!-- Dias vacios -->
         <div v-for="n in diasVacios" :key="n" class="bg-gray-100"></div>
         <!-- calendario days -->
         <div v-for="day in days" :key="day" class="p-6">
-          <div :class="{ 'bg-red-500 text-white': isItToday(day) }"
-            class="rounded-full text-center">
-               <RouterLink :to="`/notas/${day.getDate()}-${day.getMonth()+1}-${day.getFullYear()} `">{{ day.getDate() }}</RouterLink>
+          <div
+            :class="{ 'bg-red-500 text-white': isItToday(day) }"
+            class="rounded-full text-center"
+          >
+            <RouterLink
+              :to="`/notas/${day.getDate()}-${
+                day.getMonth() + 1
+              }-${day.getFullYear()} `"
+              >{{ day.getDate() }}</RouterLink
+            >
           </div>
-          <!-- <span class="text-gray-400">{{ day.getDay() }}</span> con esto podemos ver el di
-        ía pero por numero-->
+          <span class="text-gray-400">{{ notas[day.getDate()] }}</span>
         </div>
       </div>
     </div>
@@ -42,6 +47,8 @@
 </template>
 
 <script>
+import { getData } from "../firebase.js";
+
 export default {
   name: "calendar",
   data() {
@@ -62,6 +69,7 @@ export default {
       ],
       year: 2022,
       month: new Date().getMonth(),
+      notas: {},
     };
   },
   computed: {
@@ -106,6 +114,12 @@ export default {
         someDate.getFullYear() == today.getFullYear()
       );
     },
+    async getMonthInfo() {
+      this.notas = await getData(`/notas/${this.year}/${this.month + 1}`);
+    },
+  },
+  mounted() {
+    this.getMonthInfo();
   },
 };
 </script>

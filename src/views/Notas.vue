@@ -1,9 +1,12 @@
 <template>
   View Notas
-  <div >
+  <div>
     <h1>{{ $route.params.day }}</h1>
     <div class="bg-white grid grid-cols-6 gap-5">
-      <div class="col-span-3 bg-slate-400">Notas</div>
+      <div class="col-span-3 bg-slate-400">
+        Notas
+        {{ notas }}
+      </div>
 
       <div class="col-span-3 bg-slate-600">
         Formulario
@@ -44,14 +47,17 @@
 </template>
 
 <script>
+import { getData } from "../firebase.js";
+
 export default {
   data() {
     return {
       year: 2022,
       month: new Date().getMonth(),
+      notas: {},
     };
   },
-   computed: {
+  computed: {
     days() {
       let date = new Date(this.year, this.month, 1);
       let days = [];
@@ -61,8 +67,15 @@ export default {
       }
       return days;
     },
-
-
-   }
+  },
+  methods: {
+    async getDayInfo() {
+      const [day, month, year] = this.$route.params.day.split("-");
+      this.notas = await getData(`/notas/${year}/${month}/${day}`);
+    },
+  },
+  mounted() {
+    this.getDayInfo();
+  },
 };
 </script>
