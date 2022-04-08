@@ -1,7 +1,7 @@
 <template>
   View Notas
-  <div>
-    <h1>{{ today }}</h1>
+  <div >
+    <h1>{{ $route.params.day }}</h1>
     <div class="bg-white grid grid-cols-6 gap-5">
       <div class="col-span-3 bg-slate-400">Notas</div>
 
@@ -47,8 +47,22 @@
 export default {
   data() {
     return {
-      today: new Date().toISOString().substr(0, 10),
+      year: 2022,
+      month: new Date().getMonth(),
     };
   },
+   computed: {
+    days() {
+      let date = new Date(this.year, this.month, 1);
+      let days = [];
+      while (date.getMonth() === this.month) {
+        days.push(new Date(date));
+        date.setDate(date.getDate() + 1);
+      }
+      return days;
+    },
+
+
+   }
 };
 </script>

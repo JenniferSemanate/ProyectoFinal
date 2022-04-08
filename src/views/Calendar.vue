@@ -31,7 +31,7 @@
         <div v-for="day in days" :key="day" class="p-6">
           <div :class="{ 'bg-red-500 text-white': isItToday(day) }"
             class="rounded-full text-center">
-               <RouterLink :to="`/notas/`">{{ day.getDate() }}</RouterLink>
+               <RouterLink :to="`/notas/${day.getDate()}-${day.getMonth()+1}-${day.getFullYear()} `">{{ day.getDate() }}</RouterLink>
           </div>
           <!-- <span class="text-gray-400">{{ day.getDay() }}</span> con esto podemos ver el di
         ía pero por numero-->
