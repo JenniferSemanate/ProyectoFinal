@@ -39,7 +39,7 @@
               >{{ day.getDate() }}</RouterLink
             >
           </div>
-          <span class="text-gray-400">{{ notas[day.getDate()] }}</span>
+          <!-- <span class="text-gray-400">{{ notas[day.getDate()] }}</span> -->
         </div>
       </div>
     </div>
