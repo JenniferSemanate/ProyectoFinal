@@ -5,7 +5,7 @@
       <div v-if="data">
         <h1 class="p-5  bg-blue-50 font-semibold">Opciones de Desayuno!</h1>
         <div class="grid md:grid-cols-4 lg:grid-cols-10 bg-blue-50 text-gray-600">
-          <div v-for="menu in data" :key="menu" class="col-span-2 m-5" >
+          <div v-for="menu,  in data" :key="menu" class="col-span-2 m-5" >
             <div class="bg-white shadow-md p-8 rounded-xl text-center hover:shadow-2xl py-9">
               <p class="mb-5 font-bold text-lg">{{ data.hits[2].recipe.label }}</p>
               <img :src="data.hits[2].recipe.image" class="w-full h-64 mb-5">
@@ -19,7 +19,7 @@
       </div>
     </div>
   </div>
-</template>
+</template>                                                                                                                                                                                                                                                                                                           
 
 <script>
 //import axios from "axios";
@@ -44,7 +44,7 @@ export default {
         });
     },
     getId(url) {
-      return url.split("/").pop();
+      return url.split("/").pop();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
     },
   },
   mounted() {
