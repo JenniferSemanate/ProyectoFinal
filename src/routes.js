@@ -6,6 +6,6 @@ import Menus from "./views/Menus.vue";
 export const routes = [
   { path: "/", name: "calendar", component: Calendar },
   { path: "/notas/:day", name: "notas", component: Notas },
-  { path: "/menus", name: "menus", component: Menus },
+  { path: "/notas/:day/menus", name: "menus", component: Menus },
   { path: "/:path(.*)", component: NotFound },
 ];
