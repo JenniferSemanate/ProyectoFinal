@@ -32,9 +32,7 @@
           <div class="grid border p-5">
             <p class="pb-8">RECETAS FITNESS!</p>
             <p class="pb-8">Dale un soplo de aire fresco a tu alimentación! Nuestras recetas son fáciles de preparar, saludables y perfectas para la cocina fitness. Déjate inspirar y descubre fantásticos clásicos culinarios reinventados!</p>
-            <router-link to="/menus/" class="border rounded-md py-2 px-4 bg-blue-300 font-semibold hover:text-white text-center">Añadir Alimentacion</router-link>
-            <button >
-            </button>
+            <RouterLink :to="`/notas/${$route.params.day}/menus`" class="border rounded-md py-2 px-4 bg-blue-300 font-semibold hover:text-white text-center">Añadir Alimentacion</RouterLink>
           </div>
         </div>
         <!-- notas diarias  -->
