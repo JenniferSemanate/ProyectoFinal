@@ -3,15 +3,18 @@
     <div>
       <div v-if="loading">Loading....</div>
       <div v-if="data">
-        <div class="grid grid-cols-8 bg-blue-50 text-gray-600">
-        <div v-for="menu in data" :key="menu" class="col-span-2 m-5" >
+        <h1 class="p-5  bg-blue-50 font-semibold">Opciones de Desayuno!</h1>
+        <div class="grid grid-cols-10 bg-blue-50 text-gray-600">
+          <div v-for="menu in data" :key="menu" class="col-span-2 m-5" >
             <div class="bg-white shadow-md p-8 rounded-xl text-center hover:shadow-2xl py-9">
-              <h1 class="mb-5 font-bold text-lg">{{ data.hits[0].recipe.label }}</h1>
-              <img class="m-auto mb-5" src="/data.hits[0].recipe.healtLabel.image/" alt="">
-              <h1 class="mb-5 font-semibold">Calorias: {{ data.hits[0].recipe.calories }}</h1>
-              <button class="border rounded-md py-2 px-4 bg-blue-50 font-semibold hover:text-white">Seleccionar</button>
+              <p class="mb-5 font-bold text-lg">{{ data.hits[2].recipe.label }}</p>
+              <img :src="data.hits[2].recipe.image" class="w-full h-64 mb-5">
+              <p class="mb-5">Calorias: {{ data.hits[1].recipe.calories }}</p>
+              <div class="flex justify-center">
+                <button class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Añadir al menu</button>
+             </div>
             </div>
-         </div>
+          </div>
         </div>
       </div>
     </div>

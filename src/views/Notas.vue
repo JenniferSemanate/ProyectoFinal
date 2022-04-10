@@ -21,7 +21,7 @@
               <input placeholder=" Actividad: 300" class="border" type="text" />
               <p class="ml-2">kcal</p>
             </div>
-            <button class="border rounded-md py-2 px-4 bg-blue-300 font-semibold hover:text-white">Añadir datos</button>
+            <button class="border rounded-md py-2 px-4 bg-blue-400 font-semibold hover:text-white">Añadir datos</button>
           </form>
         </div>
         <!-- Añadir menú -->
@@ -32,7 +32,7 @@
           <div class="grid border p-5">
             <p class="pb-8">RECETAS FITNESS!</p>
             <p class="pb-8">Dale un soplo de aire fresco a tu alimentación! Nuestras recetas son fáciles de preparar, saludables y perfectas para la cocina fitness. Déjate inspirar y descubre fantásticos clásicos culinarios reinventados!</p>
-            <RouterLink :to="`/notas/${$route.params.day}/menus`" class="border rounded-md py-2 px-4 bg-blue-300 font-semibold hover:text-white text-center">Añadir Alimentacion</RouterLink>
+            <RouterLink :to="`/notas/${$route.params.day}/menus`" class="border rounded-md py-2 px-4 bg-blue-400 font-semibold hover:text-white text-center">Añadir Alimentacion</RouterLink>
           </div>
         </div>
         <!-- notas diarias  -->
@@ -75,6 +75,9 @@ export default {
       const [day, month, year] = this.$route.params.day.split("-");
       this.notas = await getData(`/notas/${year}/${month}/${day}`);
     },
+    // addToMenu(menu) {
+    //   this.$router.push(`/notas/${this.$route.params.day}/menus/${menu}`);
+    // },
   },
   mounted() {
     this.getDayInfo();
