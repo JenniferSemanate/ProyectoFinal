@@ -12,10 +12,14 @@
               class="bg-white shadow-md p-8 rounded-xl text-center hover:shadow-2xl py-9"
             >
               <p class="mb-5 font-bold text-lg">
-                {{ [i] }}
+                {{ i.recipe.calories }}
               </p>
-              <!-- <img :src="data.hits[2].recipe.image" class="w-full h-64 mb-5" /> -->
-              <!-- <p class="mb-5">Calorias: {{ data.hits[1].recipe.calories }}</p> -->
+              <p class="mb-5 font-bold text-lg">
+                {{ i.recipe.label }}
+              </p>
+
+              <img :src="i.recipe.image" class="w-full h-64 mb-5" />
+
               <div class="flex justify-center">
                 <button
                   class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
@@ -30,6 +34,7 @@
     </div>
   </div>
 </template>
+-->
 
 <script>
 //import axios from "axios";
