@@ -2,8 +2,7 @@
   <!-- navbar del calendario -->
   <div class="lg:bg-blue-100 lg:gap-16 lg:p-10 lg:mx-28">
     <div
-      class="flex justify-center gap-5 p-2 bg-blue-700 text-white rounded-t-xl"
-    >
+      class="flex justify-center gap-5 p-2 bg-blue-700 text-white rounded-t-xl">
       <button @click="lastMonth">
         <i class="fa-solid fa-angle-left"></i>
       </button>
@@ -36,7 +35,7 @@
         >
           <RouterLink
             :to="`/notas/${day.getDate()}-${
-              day.getMonth() + 1
+              day.getMonth() + 1                                                                                              
             }-${day.getFullYear()}`"
             >{{ day.getDate() }}</RouterLink
           >
