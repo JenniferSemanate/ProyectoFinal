@@ -5,8 +5,10 @@
       <div v-if="data">
         <!-- <h1 class="p-5 bg-blue-50 font-semibold">Opciones de Desayuno!</h1> -->
         <div
-          class="grid md:grid-cols-4 lg:grid-cols-8 bg-blue-50 text-gray-600"
-        >
+          class="grid md:grid-cols-4 lg:grid-cols-8 bg-blue-50 text-gray-600">
+          <div class="col-span-8 flex justify-between m-10">
+            <RouterLink :to="`/notas/${$route.params.day}`" class=""><i class="fa-solid fa-angle-left"></i></RouterLink>
+          </div>
           <div v-for="i in data.hits" :key="i" class="col-span-2 m-5">
             <div
               class="bg-white shadow-md p-8 rounded-xl text-center hover:shadow-2xl py-9"
@@ -18,18 +20,18 @@
                 <!--Revisar como imprimir el label para que todos tengan la misma altura-->
               </div>
               <img :src="i.recipe.image" class="w-full h-64 mb-5 max-h-66" />
-              <p class="mb-5 font-bold text-lg">
+              <p>
                 Calorias: {{ Math.round(i.recipe.calories) }}
               </p>
               <!--Buscar en el array los servings para dividir las calorias por SERVINGS-->
-              <p class="mb-5 font-bold text-lg">{{ i.recipe.mealType[0] }}</p>
+              <p>{{ i.recipe.mealType[0] }}</p>
               <a class="text-blue-600 font-semibold" :href="i.recipe.shareAs"
                 >Ver receta</a
               >
               <div class="flex justify-center">
                 <button
                   @click="storeDayInfo(Math.round(i.recipe.calories))"
-                  class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                  class="mt-5 bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-16 rounded-full"
                 >
                   Añadir
                 </button>

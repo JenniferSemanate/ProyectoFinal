@@ -1,12 +1,12 @@
 <template>
-  <div class="flex justify-between lg:bg-blue-300 lg:p-6 lg:mx-28">
+  <div class="flex justify-between lg:p-6 lg:mx-28 lg:bg-[url('/images/fondo-header.jpg')]">
     <img
-      class="w-16 p-2 font-semibold text-xl tracking-tight"
+      class="mg:w-16 lg:w-40 font-semibold"
       src="/images/logo.png"
       alt="Logotipo"
     />
-    <h2 class="mt-2 lg:mr-10 font-bold text-blue-900/50 text-4xl">Energy Power fitness </h2>
-    <h1 class="mt-2 lg:mr-10 font-semibold text-gray-800">
+    <h2 class="mt-2 lg:mr-10 font-bold text-white text-4xl bg-blue-500 px-16 py-2">Energy Power Fitness </h2>
+    <h1 class="mt-2 lg:mr-10 font-semibold text-white">
       {{ $route.params.day }}
     </h1>
   </div>

@@ -1,8 +1,11 @@
 <template>
-  <div
-    class="grid mg:grid-cols-3 lg:grid-cols-6 lg:bg-blue-100 lg:gap-16 lg:p-10 lg:mx-28"
-  >
-    <div class="col-span-3 bg-white shadow-md p-8 rounded-xl py-9">
+  <div class="grid mg:grid-cols-3 lg:grid-cols-6 lg:bg-blue-100 lg:gap-16 lg:p-10 lg:mx-28">
+    <div class="col-span-6 flex justify-between">
+      <RouterLink :to="`/`"><i class="fa-solid fa-angle-left"></i></RouterLink>
+      <RouterLink :to="`/notas/${$route.params.day}/menus`" class=""
+      ><i class="fa-solid fa-angle-right"></i></RouterLink>
+    </div>
+    <div class="col-span-3 bg-white shadow-md p-8 rounded-xl">
       <h1 class="mb-5 font-semibold">Registra tu actividad!</h1>
       <img class="m-auto mb-2" src="/images/actividad-fisica.jpg" alt="" />
       <!-- añadir peso, altura y calorias quemadas -->
@@ -44,15 +47,15 @@
           />
           <p class="ml-2">kcal</p>
         </div>
-        <button
-          class="border rounded-md py-2 px-4 bg-blue-400 font-semibold hover:text-white"
-        >
-          Añadir datos
-        </button>
+        <div class="flex justify-center">
+          <button class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-44 rounded-full">
+            Registrar
+          </button>
+        </div>
       </form>
     </div>
     <!-- Añadir menú -->
-    <div class="col-span-3 shadow-md p-8 bg-white rounded-xl py-9">
+    <div class="col-span-3 shadow-md p-8 bg-white rounded-xl">
       <h1 class="mb-5 font-semibold">Elige tu menú!</h1>
       <img
         class="m-auto mb-2 rounded-3xl"
@@ -68,11 +71,12 @@
           Déjate inspirar y descubre fantásticos clásicos culinarios
           reinventados!
         </p>
-        <RouterLink
+        <div class="flex justify-center">
+          <RouterLink
           :to="`/notas/${$route.params.day}/menus`"
-          class="border rounded-md py-2 px-4 bg-blue-400 font-semibold hover:text-white text-center"
-          >Añadir Alimentacion</RouterLink
-        >
+          class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-28 rounded-full"
+          >Añadir Alimentacion</RouterLink>
+        </div>
       </div>
     </div>
     <!-- notas diarias  -->
