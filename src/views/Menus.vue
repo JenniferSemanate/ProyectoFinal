@@ -27,8 +27,10 @@
                 >Ver receta</a
               >
               <div class="flex justify-center">
-                <button @click="storeDayInfo(Math.round(i.recipe.calories))"
-                  class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <button
+                  @click="storeDayInfo(Math.round(i.recipe.calories))"
+                  class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                >
                   Añadir
                 </button>
               </div>
@@ -72,9 +74,8 @@ export default {
     getId(url) {
       return url.split("/").pop();
     },
-    
-    storeDayInfo(calories) {
 
+    storeDayInfo(calories) {
       const [day, month, year] = this.$route.params.day.split("-");
       storeData(`notas/years/${year}/${month}/${day}`, {
         ...this.notas,
@@ -90,7 +91,6 @@ export default {
 
       this.consumidas = this.notas.consumidas;
     },
-    
   },
   mounted() {
     this.getMenus();
