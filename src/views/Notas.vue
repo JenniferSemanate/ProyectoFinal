@@ -65,15 +65,8 @@
       <h1 class="mb-5 font-semibold">Notas diarias!</h1>
       <div class="grid border p-5 justify-center">
         <p class="border-b-2">
-          <i class="fa-solid fa-file-lines"></i> Nota1: Lorem ipsum dolor sit
-          amet consectetur adipisicing elit. A provident recusandae, distinctio
-          sunt culpa itaque nisi repellendus eaque accusamus vero! {{ notas }}
-        </p>
-        <p class="border-b-2">
-          <i class="fa-solid fa-file-lines"></i> Nota2: {{ notas }}
-        </p>
-        <p class="border-b-2">
-          <i class="fa-solid fa-file-lines"></i> Nota3: {{ notas }}
+          <i class="fa-solid fa-file-lines"></i> Nota3:
+          {{ notas }}
         </p>
         <!-- <p>{{ notas }}</p> -->
       </div>
@@ -82,6 +75,7 @@
 </template>
 
 <script>
+import { storeData } from "../firebase.js";
 import { getData } from "../firebase.js";
 
 export default {
@@ -104,6 +98,10 @@ export default {
     },
   },
   methods: {
+    async storeDayInfo() {
+      const [day, month, year] = this.$route.params.day.split("-");
+      this.notas = await storeData(`/notas/${year}/${month}/${day}`);
+    },
     async getDayInfo() {
       const [day, month, year] = this.$route.params.day.split("-");
       this.notas = await getData(`/notas/${year}/${month}/${day}`);

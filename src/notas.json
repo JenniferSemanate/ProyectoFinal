@@ -1,0 +1,28 @@
+{
+  "notas": {
+    "years": {
+      "2022": {
+        "4": {
+          "20": {
+            "consumidas": 500,
+            "quemadas": 450
+          },
+          "21": {
+            "consumidas": 500,
+            "quemadas": 450
+          }
+        },
+        "5": {
+          "20": {
+            "consumidas": 500,
+            "quemadas": 450
+          },
+          "21": {
+            "consumidas": 500,
+            "quemadas": 450
+          }
+        }
+      }
+    }
+  }
+}
