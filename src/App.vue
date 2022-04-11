@@ -5,6 +5,7 @@
       src="/images/logo.png"
       alt="Logotipo"
     />
+    <h2 class="mt-2 lg:mr-10 font-bold text-blue-900/50 text-4xl">Energy Power fitness </h2>
     <h1 class="mt-2 lg:mr-10 font-semibold text-gray-800">
       {{ $route.params.day }}
     </h1>

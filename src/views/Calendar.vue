@@ -29,9 +29,9 @@
       <!-- Dias vacios -->
       <div v-for="n in diasVacios" :key="n" class="bg-gray-100"></div>
       <!-- calendario days -->
-      <div v-for="day in days" :key="day" class="p-6 border">
+      <div v-for="day in days" :key="day" class="p-12 border">
         <div
-          :class="{ 'bg-blue-500 text-white': isItToday(day) }"
+          :class="{ 'bg-blue-500 text-white': isItToday(day)}"
           class="rounded-full text-center"
         >
           <RouterLink
@@ -41,7 +41,7 @@
             >{{ day.getDate() }}</RouterLink
           >
         </div>
-        <!-- <span class="text-gray-400">{{ notas[day.getDate()] }}</span> -->
+        <span class="text-gray-400">{{ changeColor(notas)}}</span>
       </div>
     </div>
   </div>
@@ -70,7 +70,7 @@ export default {
       ],
       year: 2022,
       month: new Date().getMonth(),
-      notas: {},
+      notas: {notas: "", quemadas: "", peso: "", altura: ""},
     };
   },
   computed: {
@@ -118,6 +118,20 @@ export default {
     async getMonthInfo() {
       this.notas = await getData(`/notas/${this.year}/${this.month + 1}`);
     },
+     changeColor(notas) {
+      try {
+        if (notas === 50) {
+          return "green";
+        } else {
+          if (notas < notas.length) return "red";
+          else {
+            return "yellow";
+          }
+        }
+      } catch (error) {
+        return "yellow";
+      }
+    }
   },
   mounted() {
     this.getMonthInfo();
