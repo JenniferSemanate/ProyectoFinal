@@ -18,16 +18,20 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+// Get a reference to the datasabe service
 const db = getDatabase(app);
 
-export function storeData(dataset, payload) {
-  set(ref(db, dataset), payload);
+// Función para guardar
+export function storeData(notas) {
+  set(ref(db, "notas/"), notas);
 }
 
-export async function getData(dataset) {
+// Función para recibir
+export async function getData() {
   const dbRef = ref(db);
   try {
-    const snapshot = await get(child(dbRef, dataset));
+    const snapshot = await get(child(dbRef, "notas/"));
 
     if (snapshot.exists()) {
       return snapshot.val();
