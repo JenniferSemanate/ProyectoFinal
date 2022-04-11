@@ -80,7 +80,7 @@
       <h1 class="mb-5 font-semibold">Notas diarias!</h1>
       <div class="grid border p-5 justify-center">
         <p class="border-b-2">
-          <i class="fa-solid fa-file-lines"></i> Nota3:
+          <i class="fa-solid fa-file-lines"></i>
           {{ notas }}
         </p>
         <!-- <p>{{ notas }}</p> -->
