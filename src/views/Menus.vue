@@ -12,12 +12,8 @@
               class="bg-white shadow-md p-8 rounded-xl text-center hover:shadow-2xl py-9"
             >
               <div class="p-2">
-                <p class="font-bold text-lg">
-                  {{
-                    `${i.recipe.label.split(" ")[0]} ${
-                      i.recipe.label.split(" ")[1]
-                    }...`
-                  }}
+                <p class="font-bold text-lg truncate">
+                  {{ i.recipe.label }}
                 </p>
                 <!--Revisar como imprimir el label para que todos tengan la misma altura-->
               </div>

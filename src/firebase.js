@@ -23,15 +23,15 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
 // Función para guardar
-export function storeData(notas) {
-  set(ref(db, "notas/"), notas);
+export function storeData(path, payload) {
+  set(ref(db, path), payload);
 }
 
 // Función para recibir
-export async function getData() {
+export async function getData(path) {
   const dbRef = ref(db);
   try {
-    const snapshot = await get(child(dbRef, "notas/"));
+    const snapshot = await get(child(dbRef, path));
 
     if (snapshot.exists()) {
       return snapshot.val();

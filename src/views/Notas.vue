@@ -6,27 +6,42 @@
       <h1 class="mb-5 font-semibold">Registra tu actividad!</h1>
       <img class="m-auto mb-2" src="/images/actividad-fisica.jpg" alt="" />
       <!-- añadir peso, altura y calorias quemadas -->
-      <form class="grid border p-5">
+      <form class="grid border p-5" @submit="storeDayInfo">
         <p class="mb-2 uppercase">Registro......</p>
         <div class="flex mb-4">
           <label class="mr-2"
             ><i class="fa-solid fa-weight-scale mr-3"></i
           ></label>
-          <input placeholder=" Peso: 65" class="border" type="text" />
+          <input
+            placeholder=" Peso: 65"
+            class="border"
+            type="text"
+            v-model="peso"
+          />
           <p class="ml-2">kg</p>
         </div>
         <div class="flex mb-4">
           <label class="mr-2"
             ><i class="fa-solid fa-ruler-horizontal mr-2"></i
           ></label>
-          <input placeholder=" Altura: 1.70" class="border" type="text" />
+          <input
+            placeholder=" Altura: 1.70"
+            class="border"
+            type="text"
+            v-model="altura"
+          />
           <p class="ml-2">cm</p>
         </div>
         <div class="flex mb-5">
           <label class="mr-2"
             ><i class="fa-solid fa-fire-flame-curved mr-4"></i
           ></label>
-          <input placeholder=" Actividad: 300" class="border" type="text" />
+          <input
+            placeholder=" Actividad: 300"
+            class="border"
+            type="text"
+            v-model="quemadas"
+          />
           <p class="ml-2">kcal</p>
         </div>
         <button
@@ -84,6 +99,9 @@ export default {
       year: 2022,
       month: new Date().getMonth(),
       notas: {},
+      quemadas: "",
+      peso: "",
+      altura: "",
     };
   },
   computed: {
@@ -98,17 +116,28 @@ export default {
     },
   },
   methods: {
-    storeDayInfo() {
+    storeDayInfo(event) {
+      event.preventDefault();
+
       const [day, month, year] = this.$route.params.day.split("-");
-      this.notas = storeData(`/notas/${year}/${month}/${day}`);
+      storeData(`notas/years/${year}/${month}/${day}`, {
+        ...this.notas,
+        quemadas: this.quemadas,
+        peso: this.peso,
+        altura: this.altura,
+      });
+
+      this.getDayInfo();
     },
     async getDayInfo() {
       const [day, month, year] = this.$route.params.day.split("-");
-      this.notas = await getData(`/notas/${year}/${month}/${day}`);
+
+      this.notas = await getData(`notas/years/${year}/${month}/${day}`);
+
+      this.peso = this.notas.peso;
+      this.altura = this.notas.altura;
+      this.quemadas = this.notas.quemadas;
     },
-    // addToMenu(menu) {
-    //   this.$router.push(`/notas/${this.$route.params.day}/menus/${menu}`);
-    // },
   },
   mounted() {
     this.getDayInfo();
