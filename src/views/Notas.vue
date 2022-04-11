@@ -1,9 +1,9 @@
 <template>
-  <div class="grid mg:grid-cols-3 lg:grid-cols-6 lg:bg-blue-100 lg:gap-16 lg:p-10 lg:mx-28">
+  <div class="grid mg:grid-cols-3 lg:grid-cols-6 lg:bg-blue-100 lg:gap-16 lg:p-10 lg:mx-28 bg-[url('/images/fondo-app.jpg')] bg-cover bg-no-repeat">
     <div class="col-span-6 flex justify-between">
-      <RouterLink :to="`/`"><i class="fa-solid fa-angle-left"></i></RouterLink>
+      <RouterLink :to="`/`"><i class="fa-solid fa-angle-left text-2xl text-white"></i></RouterLink>
       <RouterLink :to="`/notas/${$route.params.day}/menus`" class=""
-      ><i class="fa-solid fa-angle-right"></i></RouterLink>
+      ><i class="fa-solid fa-angle-right text-2xl text-white"></i></RouterLink>
     </div>
     <div class="col-span-3 bg-white shadow-md p-8 rounded-xl">
       <h1 class="mb-5 font-semibold">Registra tu actividad!</h1>
