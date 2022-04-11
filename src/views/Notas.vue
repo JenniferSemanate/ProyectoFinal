@@ -98,9 +98,9 @@ export default {
     },
   },
   methods: {
-    async storeDayInfo() {
+    storeDayInfo() {
       const [day, month, year] = this.$route.params.day.split("-");
-      this.notas = await storeData(`/notas/${year}/${month}/${day}`);
+      this.notas = storeData(`/notas/${year}/${month}/${day}`);
     },
     async getDayInfo() {
       const [day, month, year] = this.$route.params.day.split("-");
