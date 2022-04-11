@@ -19,7 +19,7 @@
               </div>
               <img :src="i.recipe.image" class="w-full h-64 mb-5 max-h-66" />
               <p class="mb-5 font-bold text-lg">
-                Calorias: {{ Math.round(i.recipe.calories / 4) }}
+                Calorias: {{ Math.round(i.recipe.calories) }}
               </p>
               <!--Buscar en el array los servings para dividir las calorias por SERVINGS-->
               <p class="mb-5 font-bold text-lg">{{ i.recipe.mealType[0] }}</p>
@@ -27,10 +27,9 @@
                 >Ver receta</a
               >
               <div class="flex justify-center">
-                <button
-                  class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-                >
-                  Añadir al menu
+                <button @click="storeDayInfo"
+                  class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                  Añadir
                 </button>
               </div>
             </div>
@@ -43,6 +42,9 @@
 
 <script>
 //import axios from "axios";
+import { storeData } from "../firebase.js";
+import { getData } from "../firebase.js";
+
 export default {
   name: "menus",
   data() {
@@ -52,6 +54,8 @@ export default {
       error: true,
       appId: "f0013073",
       appKey: "4bdc9bf20b19635d616be8f8e39261a5",
+      notas: {},
+      consumidas: "",
     };
   },
   methods: {
@@ -68,6 +72,26 @@ export default {
     getId(url) {
       return url.split("/").pop();
     },
+    
+    storeDayInfo(event) {
+      event.preventDefault();
+
+      const [day, month, year] = this.$route.params.day.split("-");
+      storeData(`notas/years/${year}/${month}/${day}`, {
+        ...this.notas,
+        consumidas: this.consumidas,
+      });
+
+      this.getDayInfo();
+    },
+    async getDayInfo() {
+      const [day, month, year] = this.$route.params.day.split("-");
+
+      this.notas = await getData(`notas/years/${year}/${month}/${day}`);
+
+      this.consumidas = this.notas.consumidas;
+    },
+    
   },
   mounted() {
     this.getMenus();
