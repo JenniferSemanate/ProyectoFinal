@@ -16,7 +16,6 @@
       <!-- añadir peso, altura y calorias quemadas -->
        <form class="border p-5" @submit="storeDayInfo">
           <p class="mb-2 uppercase">medidas y actividad fisica!</p>
-
           <div class="grid grid-grid-cols-4">
             <div class="flex col-span-2 justify-between">
             <label class="mr-2"><i class="fa-solid fa-cake-candles"></i></label>
