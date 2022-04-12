@@ -4,52 +4,56 @@
   >
     <div class="col-span-8 flex justify-between mx-5">
       <RouterLink :to="`/`"
-        ><i class="fa-solid fa-angle-left text-2xl text-black m-5"></i
+        ><i class="fa-solid fa-angle-left text-2xl text-black m-10"></i
       ></RouterLink>
+      <p class="font-bold text-2xl text-gray-700 m-10">
+      {{ $route.params.day }}
+      </p>
       <RouterLink :to="`/notas/${$route.params.day}/menus`"
-        ><i class="fa-solid fa-angle-right text-2xl text-black"></i
+        ><i class="fa-solid fa-angle-right text-2xl text-black m-10"></i
       ></RouterLink>
     </div>
     <div class="col-span-4 bg-white/60 shadow-md p-8 rounded-xl mx-16">
       <h1 class="mb-5 font-semibold">Registra tu actividad!</h1>
       <img class="m-auto mb-2 rounded-3xl" src="/images/metrics.jpeg" alt="" />
       <!-- añadir peso, altura y calorias quemadas -->
-       <form class="border p-5" @submit="storeDayInfo">
-          <p class="mb-2 uppercase">medidas y actividad fisica!</p>
-          <div class="grid grid-grid-cols-4">
-            <div class="flex col-span-2 justify-between">
-            <label class="mr-2"><i class="fa-solid fa-cake-candles"></i></label>
-            <input placeholder=" Edad: 30" class="border" type="text" v-model="edad"/>
-            <label class="mr-2"><i class="fa-solid fa-weight-scale"></i></label>
-            <input placeholder=" Peso: 65" class="border" type="text" v-model="peso"/>
-            <p class="ml-2">kg</p>
-          </div>
-
-            <div class="flex col-span-2 m-4">
-            <label class="mr-2"><i class="fa-solid fa-ruler-horizontal mr-2"></i></label>
-            <input placeholder=" Altura: 1.70" class="border" type="text" v-model="altura"/>
-            <!-- <p class="ml-2">cm</p> -->
-            <label class="mr-2"><i class="fa-solid fa-fire-flame-curved mr-4"></i></label>
-            <input placeholder=" Actividad: 300" class="border" type="text" v-model="quemadas"/>
-            <!-- <p class="ml-2">kcal</p> -->
+       <form class="grid grid-cols-2 border p-5 h-60" @submit="storeDayInfo">
+            <div class="col-span-2 mb-2 uppercase">medidas y actividad física!</div>
+            <div class="col-span-1 m-auto">
+                 <div class="flex mb-5">
+                <label><i class="fa-solid fa-cake-candles mr-4"></i></label>
+                <input placeholder=" Edad: 30" class="border rounded-md" type="text" v-model="edad"/>
+              </div>
+              <div class="flex">
+                <label><i class="fa-solid fa-weight-scale mr-4"></i></label>
+                <input placeholder=" Peso: 65" class="border rounded-md" type="text" v-model="peso"/>
+              </div>
             </div>
+             <div class="col-span-1 m-auto">
+              <div class="flex mb-5">
+                <label><i class="fa-solid fa-ruler-horizontal mr-2"></i></label>
+                <input placeholder=" Altura: 1.70" class="border rounded-md" type="text" v-model="altura"/>
+              </div>
+              <div class="flex">
+                <label><i class="fa-solid fa-fire-flame-curved mr-4"></i></label>
+                <input placeholder=" Actividad: 300" class="border rounded-md" type="text" v-model="quemadas"/>
+              </div>
             </div>
-
-            <div class="flex justify-center">
-              <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-44 rounded-full">
+            <div class="col-span-2 m-auto uppercase">
+              <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-28 rounded-full mt-2">
                 Registrar
               </button>
             </div>
-         </form>
+       </form>
     </div>
     <!-- Añadir menú -->
     <div class="col-span-4 shadow-md p-8 bg-white/60 rounded-xl mx-16">
       <h1 class="mb-5 font-semibold">Elige tu menú!</h1>
       <img class="m-auto mb-2 rounded-3xl" src="/images/food.jpeg" alt="" />
       <!-- añadir peso, altura y calorias quemadas -->
-      <div class="grid border p-5">
-        <p class="pb-8">RECETAS FITNESS!</p>
-        <p class="pb-8">
+      <div class="grid border p-5 h-60">
+        <p class="pb-3">RECETAS FITNESS!</p>
+        <p>
           Dale un soplo de aire fresco a tu alimentación! Nuestras recetas son
           fáciles de preparar, saludables y perfectas para la cocina fitness.
           Déjate inspirar y descubre fantásticos clásicos culinarios
@@ -58,9 +62,8 @@
         <div class="flex justify-center">
           <RouterLink
             :to="`/notas/${$route.params.day}/menus`"
-            class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-28 rounded-full"
-            >Añadir Alimentacion</RouterLink
-          >
+            class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-28 rounded-full mt-2"
+            >Registrar</RouterLink>
         </div>
       </div>
     </div>
