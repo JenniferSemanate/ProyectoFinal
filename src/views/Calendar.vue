@@ -33,10 +33,10 @@
         v-for="day in days"
         :key="day"
         class="p-10 border"
-        :class="{ 'bg-green-100': notas[day.getDate()] }"
+        :class="{ 'bg-gray-400': notas[day.getDate()] }"
       >
         <div
-          :class="{ 'bg-gray-500 text-white': isItToday(day) }"
+          :class="{ 'bg-gray-800 text-white': isItToday(day) }"
           class="rounded-full text-center"
         >
           <RouterLink
