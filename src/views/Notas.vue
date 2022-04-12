@@ -7,7 +7,7 @@
         ><i class="fa-solid fa-angle-left text-2xl text-black m-10"></i
       ></RouterLink>
       <p class="font-bold text-2xl text-gray-700 m-10">
-      {{ $route.params.day }}
+        {{ $route.params.day }}
       </p>
       <RouterLink :to="`/notas/${$route.params.day}/menus`"
         ><i class="fa-solid fa-angle-right text-2xl text-black m-10"></i
@@ -17,34 +17,56 @@
       <h1 class="mb-5 font-semibold">Registra tu actividad!</h1>
       <img class="m-auto mb-2 rounded-3xl" src="/images/metrics.jpeg" alt="" />
       <!-- añadir peso, altura y calorias quemadas -->
-       <form class="grid grid-cols-2 border p-5 h-60" @submit="storeDayInfo">
-            <div class="col-span-2 mb-2 uppercase">medidas y actividad física!</div>
-            <div class="col-span-1 m-auto">
-                 <div class="flex mb-5">
-                <label><i class="fa-solid fa-cake-candles mr-4"></i></label>
-                <input placeholder=" Edad: 30" class="border rounded-md" type="text" v-model="edad"/>
-              </div>
-              <div class="flex">
-                <label><i class="fa-solid fa-weight-scale mr-4"></i></label>
-                <input placeholder=" Peso: 65" class="border rounded-md" type="text" v-model="peso"/>
-              </div>
-            </div>
-             <div class="col-span-1 m-auto">
-              <div class="flex mb-5">
-                <label><i class="fa-solid fa-ruler-horizontal mr-2"></i></label>
-                <input placeholder=" Altura: 1.70" class="border rounded-md" type="text" v-model="altura"/>
-              </div>
-              <div class="flex">
-                <label><i class="fa-solid fa-fire-flame-curved mr-4"></i></label>
-                <input placeholder=" Actividad: 300" class="border rounded-md" type="text" v-model="quemadas"/>
-              </div>
-            </div>
-            <div class="col-span-2 m-auto uppercase">
-              <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-28 rounded-full mt-2">
-                Registrar
-              </button>
-            </div>
-       </form>
+      <form class="grid grid-cols-2 border p-5 h-60" @submit="storeDayInfo">
+        <div class="col-span-2 mb-2 uppercase">medidas y actividad física!</div>
+        <div class="col-span-1 m-auto">
+          <div class="flex mb-5">
+            <label><i class="fa-solid fa-cake-candles mr-4"></i></label>
+            <input
+              placeholder=" Edad: 30"
+              class="border rounded-md"
+              type="text"
+              v-model="edad"
+            />
+          </div>
+          <div class="flex">
+            <label><i class="fa-solid fa-weight-scale mr-4"></i></label>
+            <input
+              placeholder=" Peso: 65"
+              class="border rounded-md"
+              type="text"
+              v-model="peso"
+            />
+          </div>
+        </div>
+        <div class="col-span-1 m-auto">
+          <div class="flex mb-5">
+            <label><i class="fa-solid fa-ruler-horizontal mr-2"></i></label>
+            <input
+              placeholder=" Altura: 1.70"
+              class="border rounded-md"
+              type="text"
+              v-model="altura"
+            />
+          </div>
+          <div class="flex">
+            <label><i class="fa-solid fa-fire-flame-curved mr-4"></i></label>
+            <input
+              placeholder=" Actividad: 300"
+              class="border rounded-md"
+              type="text"
+              v-model="quemadas"
+            />
+          </div>
+        </div>
+        <div class="col-span-2 m-auto uppercase">
+          <button
+            class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-28 rounded-full mt-2"
+          >
+            Registrar
+          </button>
+        </div>
+      </form>
     </div>
     <!-- Añadir menú -->
     <div class="col-span-4 shadow-md p-8 bg-white/60 rounded-xl mx-16">
@@ -63,12 +85,13 @@
           <RouterLink
             :to="`/notas/${$route.params.day}/menus`"
             class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-28 rounded-full mt-2"
-            >Registrar</RouterLink>
+            >Registrar</RouterLink
+          >
         </div>
       </div>
     </div>
     <!-- notas diarias  -->
-    <div class="col-span-8 bg-white/70 shadow-md rounded p-8 m-16">
+    <div v-if="notas" class="col-span-8 bg-white/70 shadow-md rounded p-8 m-16">
       <h1 class="mb-5 font-semibold">Notas diarias!</h1>
       <div>
         <p>IMB:{{ calculoImb }}</p>
