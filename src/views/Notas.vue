@@ -1,11 +1,12 @@
 <template>
-  <div class="grid mg:grid-cols-3 lg:grid-cols-6 lg:bg-blue-100 lg:gap-16 lg:p-10 lg:mx-28 bg-[url('/images/fondo-app.jpg')] bg-cover bg-no-repeat">
-    <div class="col-span-6 flex justify-between">
-      <RouterLink :to="`/`"><i class="fa-solid fa-angle-left text-2xl text-white"></i></RouterLink>
+  <div class="grid grid-cols-8 gap-5 bg-slate-700 lg:mx-28">
+    <div class="col-span-8 flex justify-between mx-5">
+      <RouterLink :to="`/`"><i class="fa-solid fa-angle-left text-2xl text-blue-500 m-5"></i></RouterLink>
       <RouterLink :to="`/notas/${$route.params.day}/menus`" class=""
-      ><i class="fa-solid fa-angle-right text-2xl text-white"></i></RouterLink>
+      ><i class="fa-solid fa-angle-right text-2xl text-blue-500"></i></RouterLink>
     </div>
-    <div class="col-span-3 bg-white shadow-md p-8 rounded-xl">
+
+    <div class="col-span-4 bg-white shadow-md p-8 rounded-xl m-16">
       <h1 class="mb-5 font-semibold">Registra tu actividad!</h1>
       <img class="m-auto mb-2" src="/images/actividad-fisica.jpg" alt="" />
       <!-- añadir peso, altura y calorias quemadas -->
@@ -55,7 +56,7 @@
       </form>
     </div>
     <!-- Añadir menú -->
-    <div class="col-span-3 shadow-md p-8 bg-white rounded-xl">
+    <div class="col-span-4 shadow-md p-8 bg-white rounded-xl m-16">
       <h1 class="mb-5 font-semibold">Elige tu menú!</h1>
       <img
         class="m-auto mb-2 rounded-3xl"
@@ -80,14 +81,13 @@
       </div>
     </div>
     <!-- notas diarias  -->
-    <div class="col-span-3 lg:col-span-6 bg-white shadow-md rounded p-8">
+    <div class="col-span-8 lg:col-span-6 bg-white shadow-md rounded p-8">
       <h1 class="mb-5 font-semibold">Notas diarias!</h1>
       <div class="grid border p-5 justify-center">
         <p class="border-b-2">
           <i class="fa-solid fa-file-lines"></i>
           {{ notas }}
         </p>
-        <!-- <p>{{ notas }}</p> -->
       </div>
     </div>
   </div>

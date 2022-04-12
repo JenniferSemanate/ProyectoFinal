@@ -1,7 +1,7 @@
 <template>
   <div class="flex lg:p-6 lg:mx-28 lg:bg-[url('/images/fondo-header.jpg')]">
     <img
-      class="mg:w-16 lg:w-40 font-semibold"
+      class="lg:w-40 font-semibold"
       src="/images/logo.png"
       alt="Logotipo"
     />
