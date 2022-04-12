@@ -8,8 +8,8 @@
   <div v-if="error" class="text-red-600">
     {{ error }}
   </div>
-  <div v-if="data" class="grid md:grid-cols-4 lg:grid-cols-8 lg:bg-[url('/images/fondo-metalizado.jpeg')] text-gray-600 lg:mx-28">
-    <div class="md:col-span-1 lg:col-span-8 flex justify-between m-10">
+  <div v-if="data" class="grid grid-cols-8 lg:bg-[url('/images/fondo-metalizado.jpeg')] text-gray-600 lg:mx-28">
+    <div class="col-span-8 flex justify-between m-5">
       <RouterLink :to="`/notas/${$route.params.day}`" class=""><i class="fa-solid fa-angle-left text-2xl text-black"></i></RouterLink>
     </div>
     <div v-for="i in data.hits" :key="i" class="col-span-2 m-5">
