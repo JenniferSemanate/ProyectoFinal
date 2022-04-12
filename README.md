@@ -6,15 +6,19 @@ Aunque el desarrollo se ha realizado para el entorno web, la idea a largo plazo 
 
 ## Objetivos
 
-- Crear un calendario dinámico que muestra el día actual y coloree de verde aquellos días que registre datos para las calorías quemadas.
+- Crear un calendario dinámico que muestra el día actual y coloree aquellos días que contengan datos.
 
-- Registrar datos de peso, altura y calorías quemadas a través de un formulario.
+- Registrar datos de edad, peso, altura y calorías quemadas a través de un formulario.
 
 - Registrar datos de alimentación, a través de una siguiente vista que proporciona diferentes alternativas de recetas con su correspondiente número de calorías.
 
-- Consumir datos de la API Edamam y mostrarlos de manera atractiva.
+- Calcular el índice metabólico basal.
 
-- Mostrar la información registrada en el apartado de notas según la fecha donde se hayan introducido.
+- Calcular las calorias diarias (calorias consumidas - calorias quemadas).
+
+- Mostrar la información registrada en el apartado de notas según la fecha donde se hayan introducido. El apartado de notas solo aparecerá siempre que se hayan introducido datos.
+
+- Consumir datos de la API Edamam y mostrarlos de manera atractiva. Además, de utilizarlos para realizar cálculos.
 
 ## Configuración
 
@@ -37,7 +41,11 @@ Not Found
 # Recursos
 
 - [Vue Router](https://router.vuejs.org/introduction.html)
+
 - [Vue Documentation](https://vuejs.org/guide/introduction.html)
+
 - [Vue lifecycle hooks](https://vuejs.org/guide/essentials/lifecycle.html)
+
 - [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+
 - [Edamam](https://www.edamam.com/)
