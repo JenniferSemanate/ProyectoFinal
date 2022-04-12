@@ -14,66 +14,34 @@
       <h1 class="mb-5 font-semibold">Registra tu actividad!</h1>
       <img class="m-auto mb-2 rounded-3xl" src="/images/metrics.jpeg" alt="" />
       <!-- añadir peso, altura y calorias quemadas -->
-      <form class="border p-5" @submit="storeDayInfo">
-        <p class="mb-2 uppercase">medidas y actividad fisica!</p>
+       <form class="border p-5" @submit="storeDayInfo">
+          <p class="mb-2 uppercase">medidas y actividad fisica!</p>
 
-        <div class="flex mb-4">
-          <label class="mr-2"
-            ><i class="fa-solid fa-cake-candles mr-3"></i
-          ></label>
-          <input
-            placeholder=" Edad: 30"
-            class="border"
-            type="text"
-            v-model="edad"
-          />
-        </div>
+          <div class="grid grid-grid-cols-4">
+            <div class="flex col-span-2 justify-between">
+            <label class="mr-2"><i class="fa-solid fa-cake-candles"></i></label>
+            <input placeholder=" Edad: 30" class="border" type="text" v-model="edad"/>
+            <label class="mr-2"><i class="fa-solid fa-weight-scale"></i></label>
+            <input placeholder=" Peso: 65" class="border" type="text" v-model="peso"/>
+            <p class="ml-2">kg</p>
+          </div>
 
-        <div class="flex mb-4">
-          <label class="mr-2"
-            ><i class="fa-solid fa-weight-scale mr-3"></i
-          ></label>
-          <input
-            placeholder=" Peso: 65"
-            class="border"
-            type="text"
-            v-model="peso"
-          />
-          <p class="ml-2">kg</p>
-        </div>
+            <div class="flex col-span-2 m-4">
+            <label class="mr-2"><i class="fa-solid fa-ruler-horizontal mr-2"></i></label>
+            <input placeholder=" Altura: 1.70" class="border" type="text" v-model="altura"/>
+            <!-- <p class="ml-2">cm</p> -->
+            <label class="mr-2"><i class="fa-solid fa-fire-flame-curved mr-4"></i></label>
+            <input placeholder=" Actividad: 300" class="border" type="text" v-model="quemadas"/>
+            <!-- <p class="ml-2">kcal</p> -->
+            </div>
+            </div>
 
-        <div class="flex mb-4">
-          <label class="mr-2"
-            ><i class="fa-solid fa-ruler-horizontal mr-2"></i
-          ></label>
-          <input
-            placeholder=" Altura: 1.70"
-            class="border"
-            type="text"
-            v-model="altura"
-          />
-          <p class="ml-2">cm</p>
-        </div>
-        <div class="flex mb-5">
-          <label class="mr-2"
-            ><i class="fa-solid fa-fire-flame-curved mr-4"></i
-          ></label>
-          <input
-            placeholder=" Actividad: 300"
-            class="border"
-            type="text"
-            v-model="quemadas"
-          />
-          <p class="ml-2">kcal</p>
-        </div>
-        <div class="flex justify-center">
-          <button
-            class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-44 rounded-full"
-          >
-            Registrar
-          </button>
-        </div>
-      </form>
+            <div class="flex justify-center">
+              <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-44 rounded-full">
+                Registrar
+              </button>
+            </div>
+         </form>
     </div>
     <!-- Añadir menú -->
     <div class="col-span-4 shadow-md p-8 bg-white/60 rounded-xl mx-16">
