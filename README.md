@@ -30,13 +30,11 @@ Ejecuta `npm run dev` para ejecutar el servidor de desarrollo
 
 ### Vistas:
 
-Homepage - Calendario
+[Calendar] (support/home.jpg)
 
-Notas
+[Notas] (support/home.jpg)
 
-Menu
-
-Not Found
+[Menús] (support/menus.jpg)
 
 # Recursos
 
