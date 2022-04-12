@@ -79,9 +79,7 @@ export default {
     },
     async getDayInfo() {
       const [day, month, year] = this.$route.params.day.split("-");
-
       this.notas = await getData(`notas/years/${year}/${month}/${day}`);
-
       this.consumidas = this.notas.consumidas;
     },
   },

@@ -11,11 +11,20 @@
       <!-- añadir peso, altura y calorias quemadas -->
       <form class="border p-5" @submit="storeDayInfo">
         <p class="mb-2 uppercase">medidas y actividad fisica!</p>
+        
+        
         <div class="flex mb-4">
+          <label class="mr-2"><i class="fa-solid fa-cake-candles"></i></label>
+          <input placeholder=" Edad: 30"
+          class="border"
+          type="text"
+          v-model="edad"/>
           <label class="mr-2"><i class="fa-solid fa-weight-scale mr-3"></i></label>
           <input placeholder=" Peso: 65" class="border" type="text" v-model="peso"/>
           <p class="ml-2">kg</p>
         </div>
+
+
         <div class="flex mb-4">
           <label class="mr-2"
             ><i class="fa-solid fa-ruler-horizontal mr-2"></i
@@ -74,11 +83,18 @@
     <!-- notas diarias  -->
     <div class="col-span-8 bg-white/70  shadow-md rounded p-8 m-16">
       <h1 class="mb-5 font-semibold">Notas diarias!</h1>
+      <div>
+          <p>IMB:{{  calculoImb }}</p>
+          <p>Total Calorias Diarias: {{ totalCaloriasDiarias }}</p>
+      </div>
       <div class="grid border p-5 justify-center">
-        <p class="border-b-2">
-          <i class="fa-solid fa-file-lines"></i>
-          {{ notas }}
-        </p>
+        <div class="border-b-2">
+            <p> Edad:{{ notas.edad }}</p>
+            <p>Peso:{{notas.peso}}</p>
+            <p> Altura:{{notas.altura}}</p>
+            <p>Calorias Quemadas:{{notas.quemadas}}</p>
+            <p>Calorias Consumidas:{{notas.consumidas}}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -95,8 +111,12 @@ export default {
       month: new Date().getMonth(),
       notas: {},
       quemadas: "",
+      edad:"",
       peso: "",
       altura: "",
+      imb:"",
+      consumidas: "",
+      
     };
   },
   computed: {
@@ -109,6 +129,14 @@ export default {
       }
       return days;
     },
+    calculoImb() {
+        const imb = (this.peso * 10) + (this.altura * 6.25) - (this.edad * 5) -161
+        return imb
+    },
+    totalCaloriasDiarias() {
+        const kcal = (this.consumidas - this.quemadas) //traer las quemadas
+        return kcal
+    },
   },
   methods: {
     storeDayInfo(event) {
@@ -120,6 +148,7 @@ export default {
         quemadas: this.quemadas,
         peso: this.peso,
         altura: this.altura,
+        edad: this.edad,
       });
 
       this.getDayInfo();
@@ -128,10 +157,11 @@ export default {
       const [day, month, year] = this.$route.params.day.split("-");
 
       this.notas = await getData(`notas/years/${year}/${month}/${day}`);
-
       this.peso = this.notas.peso;
       this.altura = this.notas.altura;
       this.quemadas = this.notas.quemadas;
+      this.edad = this.notas.edad;
+      this.consumidas = this.notas.consumidas;
     },
   },
   mounted() {
