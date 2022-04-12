@@ -130,7 +130,7 @@ export default {
       return days;
     },
     calculoImb() {
-        const imb = (this.peso * 10) + (this.altura * 6.25) - (this.edad * 5) -161
+        const imb = (this.peso * 10) + (this.altura * 6.25) - (this.edad * 5) -(161)
         return imb
     },
     totalCaloriasDiarias() {
