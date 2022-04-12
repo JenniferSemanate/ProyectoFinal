@@ -8,9 +8,9 @@
   <div v-if="error" class="text-red-600">
     {{ error }}
   </div>
-  <div v-if="data" class="grid md:grid-cols-4 lg:grid-cols-8 bg-white text-gray-600 lg:mx-28">
+  <div v-if="data" class="grid md:grid-cols-4 lg:grid-cols-8 lg:bg-[url('/images/fondo-metalizado.jpeg')] text-gray-600 lg:mx-28">
     <div class="md:col-span-1 lg:col-span-8 flex justify-between m-10">
-      <RouterLink :to="`/notas/${$route.params.day}`" class=""><i class="fa-solid fa-angle-left text-2xl text-white"></i></RouterLink>
+      <RouterLink :to="`/notas/${$route.params.day}`" class=""><i class="fa-solid fa-angle-left text-2xl text-black"></i></RouterLink>
     </div>
     <div v-for="i in data.hits" :key="i" class="col-span-2 m-5">
       <div class="bg-white shadow-md p-8 rounded-xl text-center hover:shadow-2xl py-9">
@@ -19,11 +19,11 @@
         <p>Calorias: {{ Math.round(i.recipe.calories) }}</p>
         <!--Buscar en el array los servings para dividir las calorias por SERVINGS-->
         <p>{{ i.recipe.mealType[0] }}</p>
-        <a class="text-blue-600 font-semibold" :href="i.recipe.shareAs">Ver receta</a>
+        <a class="font-bold underline" :href="i.recipe.shareAs">Ver receta</a>
         <div class="flex justify-center">
           <button
             @click="storeDayInfo(Math.round(i.recipe.calories))"
-            class="mt-5 bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-16 rounded-full">
+            class="mt-5 bg-gray-400 hover:bg-gray-700 text-white font-bold py-2 px-16 rounded-full">
             Añadir
           </button>
         </div>
@@ -76,8 +76,6 @@ export default {
         ...this.notas,
         consumidas: calories,
       });
-
-      this.getDayInfo();
     },
     async getDayInfo() {
       const [day, month, year] = this.$route.params.day.split("-");
@@ -89,6 +87,7 @@ export default {
   },
   mounted() {
     this.getMenus();
+    this.getDayInfo();
   },
 };
 </script>

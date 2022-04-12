@@ -1,27 +1,20 @@
 <template>
-  <div class="grid grid-cols-8 gap-5 bg-slate-700 lg:mx-28">
+  <div class="grid grid-cols-8 gap-5 lg:mx-28 lg:bg-[url('/images/fondo-metalizado.jpeg')]">
     <div class="col-span-8 flex justify-between mx-5">
-      <RouterLink :to="`/`"><i class="fa-solid fa-angle-left text-2xl text-blue-500 m-5"></i></RouterLink>
-      <RouterLink :to="`/notas/${$route.params.day}/menus`" class=""
-      ><i class="fa-solid fa-angle-right text-2xl text-blue-500"></i></RouterLink>
+      <RouterLink :to="`/`"><i class="fa-solid fa-angle-left text-2xl text-black m-5"></i></RouterLink>
+      <RouterLink :to="`/notas/${$route.params.day}/menus`"
+      ><i class="fa-solid fa-angle-right text-2xl text-black"></i></RouterLink>
     </div>
-
-    <div class="col-span-4 bg-white shadow-md p-8 rounded-xl m-16">
+    <div class="col-span-4 bg-white/60  shadow-md p-8 rounded-xl mx-16">
       <h1 class="mb-5 font-semibold">Registra tu actividad!</h1>
-      <img class="m-auto mb-2" src="/images/actividad-fisica.jpg" alt="" />
+      <img class="m-auto mb-2 rounded-3xl" src="/images/metrics.jpeg" alt="" />
       <!-- añadir peso, altura y calorias quemadas -->
-      <form class="grid border p-5" @submit="storeDayInfo">
+      <div class="felx justify-center">
+        <form class="grid border p-5" @submit="storeDayInfo">
         <p class="mb-2 uppercase">Registro......</p>
         <div class="flex mb-4">
-          <label class="mr-2"
-            ><i class="fa-solid fa-weight-scale mr-3"></i
-          ></label>
-          <input
-            placeholder=" Peso: 65"
-            class="border"
-            type="text"
-            v-model="peso"
-          />
+          <label class="mr-2"><i class="fa-solid fa-weight-scale mr-3"></i></label>
+          <input placeholder=" Peso: 65" class="border" type="text" v-model="peso"/>
           <p class="ml-2">kg</p>
         </div>
         <div class="flex mb-4">
@@ -37,8 +30,7 @@
           <p class="ml-2">cm</p>
         </div>
         <div class="flex mb-5">
-          <label class="mr-2"
-            ><i class="fa-solid fa-fire-flame-curved mr-4"></i
+          <label class="mr-2"><i class="fa-solid fa-fire-flame-curved mr-4"></i
           ></label>
           <input
             placeholder=" Actividad: 300"
@@ -49,18 +41,19 @@
           <p class="ml-2">kcal</p>
         </div>
         <div class="flex justify-center">
-          <button class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-44 rounded-full">
+          <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-44 rounded-full">
             Registrar
           </button>
         </div>
       </form>
+      </div>
     </div>
     <!-- Añadir menú -->
-    <div class="col-span-4 shadow-md p-8 bg-white rounded-xl m-16">
+    <div class="col-span-4 shadow-md p-8 bg-white/60 rounded-xl mx-16">
       <h1 class="mb-5 font-semibold">Elige tu menú!</h1>
       <img
         class="m-auto mb-2 rounded-3xl"
-        src="/images/comida-sana.jpg"
+        src="/images/food.jpeg"
         alt=""
       />
       <!-- añadir peso, altura y calorias quemadas -->
@@ -75,13 +68,13 @@
         <div class="flex justify-center">
           <RouterLink
           :to="`/notas/${$route.params.day}/menus`"
-          class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-28 rounded-full"
+          class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-28 rounded-full"
           >Añadir Alimentacion</RouterLink>
         </div>
       </div>
     </div>
     <!-- notas diarias  -->
-    <div class="col-span-8 lg:col-span-6 bg-white shadow-md rounded p-8">
+    <div class="col-span-8 bg-white/70  shadow-md rounded p-8 m-16">
       <h1 class="mb-5 font-semibold">Notas diarias!</h1>
       <div class="grid border p-5 justify-center">
         <p class="border-b-2">

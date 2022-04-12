@@ -1,7 +1,7 @@
 <template>
   <!-- navbar del calendario -->
-  <div class="lg:bg-white lg:gap-16 lg:p-10 lg:mx-28">
-    <div class="flex justify-center gap-5 p-2 bg-blue-700 text-white rounded-t-xl">
+  <div class="lg:bg-white lg:gap-16 lg:p-10 lg:mx-28 lg:bg-[url('/images/fondo-metalizado.jpeg')]">
+    <div class="flex justify-center gap-5 p-2 bg-gray-700 text-white rounded-t-xl mt-5">
       <button @click="lastMonth">
         <i class="fa-solid fa-angle-left"></i>
       </button>
@@ -12,24 +12,23 @@
       </button>
     </div>
     <!-- calendario week -->
-    <div class="grid grid-cols-7 text-center">
-      <div class="bg-blue-200 font-bold text-xs p-2">Mon</div>
-      <div class="bg-blue-200 font-bold text-xs p-2">Tue</div>
-      <div class="bg-blue-200 font-bold text-xs p-2">Wed</div>
-      <div class="bg-blue-200 font-bold text-xs p-2">Thu</div>
-      <div class="bg-blue-200 font-bold text-xs p-2">Fri</div>
-      <div class="bg-blue-200 font-bold text-xs p-2">Sat</div>
-      <div class="bg-blue-200 font-bold text-xs p-2">Sun</div>
+    <div class="grid grid-cols-7 text-center font-bold bg-white">
+      <div class="p-2">Mon</div>
+      <div class="p-2">Tue</div>
+      <div class="p-2">Wed</div>
+      <div class="p-2">Thu</div>
+      <div class="p-2">Fri</div>
+      <div class="p-2">Sat</div>
+      <div class="p-2">Sun</div>
     </div>
     <div
-      class="grid grid-cols-7 bg-white shadow-md lg:p-8 rounded-b-xl lg:py-9"
-    >
+      class="grid grid-cols-7 bg-white/95  shadow-md rounded-b-xl">
       <!-- Dias vacios -->
       <div v-for="n in diasVacios" :key="n" class="bg-gray-100"></div>
       <!-- calendario days -->
-      <div v-for="day in days" :key="day" class="p-12 border">
+      <div v-for="day in days" :key="day" class="p-10 border">
         <div
-          :class="{ 'bg-blue-500 text-white': isItToday(day)}"
+          :class="{ 'bg-gray-500 text-white': isItToday(day)}"
           class="rounded-full text-center"
         >
           <RouterLink
