@@ -9,9 +9,8 @@
       <h1 class="mb-5 font-semibold">Registra tu actividad!</h1>
       <img class="m-auto mb-2 rounded-3xl" src="/images/metrics.jpeg" alt="" />
       <!-- añadir peso, altura y calorias quemadas -->
-      <div class="felx justify-center">
-        <form class="grid border p-5" @submit="storeDayInfo">
-        <p class="mb-2 uppercase">Registro......</p>
+      <form class="border p-5" @submit="storeDayInfo">
+        <p class="mb-2 uppercase">medidas y actividad fisica!</p>
         <div class="flex mb-4">
           <label class="mr-2"><i class="fa-solid fa-weight-scale mr-3"></i></label>
           <input placeholder=" Peso: 65" class="border" type="text" v-model="peso"/>
@@ -46,7 +45,6 @@
           </button>
         </div>
       </form>
-      </div>
     </div>
     <!-- Añadir menú -->
     <div class="col-span-4 shadow-md p-8 bg-white/60 rounded-xl mx-16">
