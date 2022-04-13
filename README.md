@@ -1,4 +1,3 @@
-
 # Proyecto Final : Energy Power Fitness
 
 Para el desarrollo de este proyecto hemos utilizado el framework VUE, Vite, Router, Tailwind y Firebase para el almacenamiento de datos.
@@ -26,23 +25,10 @@ Aunque el desarrollo se ha realizado para el entorno web, la idea a largo plazo 
 Ejecuta `npm install` para instalar los paquetes (packages)
 
 Ejecuta `npm run dev` para ejecutar el servidor de desarrollo
-<<<<<<< HEAD
-
-## Estructura de la Aplicación
-
-### Vistas:
-
-![Calendar] (support/home.png)
-
-![Notas] (support/home.png)
-
-![Menús] (support/menus.png)
-=======
 
 ## Diagrama
 
 ![diagrama](https://user-images.githubusercontent.com/99184405/163130129-f605b572-4ef0-4e0e-9cf3-3b19d3672600.png)
-
 
 ## Vistas
 
@@ -51,11 +37,12 @@ Ejecuta `npm run dev` para ejecutar el servidor de desarrollo
 ![home](https://user-images.githubusercontent.com/99184405/163124156-9b1a961a-f14a-4121-922b-27bba06a2c4c.png)
 
 ### Notas
+
 ![Notas](https://user-images.githubusercontent.com/99184405/163129503-63e8ffd7-b114-4413-951d-1b2fd7fac72f.png)
 
 ### Menús
+
 ![menus](https://user-images.githubusercontent.com/99184405/163124261-7535b36f-c4a8-42ff-a0f1-158d9788159d.png)
->>>>>>> 214f9bebf364180e8e4856efcea8f6868c58942b
 
 # Recursos
 
