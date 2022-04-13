@@ -1,8 +1,10 @@
 <template>
   <div
-    class="grid grid-cols-8 gap-5 lg:mx-28 lg:bg-[url('/images/fondo-metalizado.jpeg')]">
+    class="grid grid-cols-8 gap-5 lg:mx-28 lg:bg-[url('/images/fondo-metalizado.jpeg')]"
+  >
     <div class="col-span-8 flex justify-between mx-5">
-      <RouterLink :to="`/`"><i class="fa-solid fa-angle-left text-2xl text-black m-10"></i>
+      <RouterLink :to="`/`"
+        ><i class="fa-solid fa-angle-left text-2xl text-black m-10"></i>
       </RouterLink>
       <p class="font-bold text-2xl text-gray-700 m-10">
         {{ $route.params.day }}
@@ -24,7 +26,8 @@
               placeholder=" Edad: 30"
               class="border rounded-md"
               type="text"
-              v-model="edad"/>
+              v-model="edad"
+            />
           </div>
           <div class="flex">
             <label><i class="fa-solid fa-weight-scale mr-2"></i></label>
@@ -35,13 +38,17 @@
               v-model="peso"
             />
           </div>
-        
         </div>
 
         <div class="col-span-1 m-auto p-5">
           <div class="flex mb-5">
             <label><i class="fa-solid fa-ruler-horizontal mr-2"></i></label>
-            <input placeholder=" Altura: 170" class="border rounded-md" type="text" v-model="altura"/>
+            <input
+              placeholder=" Altura: 170"
+              class="border rounded-md"
+              type="text"
+              v-model="altura"
+            />
           </div>
           <div class="flex">
             <label><i class="fa-solid fa-fire-flame-curved mr-4"></i></label>
@@ -49,12 +56,14 @@
               placeholder=" Actividad: 300"
               class="border rounded-md"
               type="text"
-              v-model="quemadas"/>
+              v-model="quemadas"
+            />
           </div>
         </div>
         <div class="flex col-span-2 m-auto">
           <button
-            class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-28 rounded-full m-auto">
+            class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-28 rounded-full m-auto"
+          >
             Registrar
           </button>
         </div>
@@ -87,14 +96,16 @@
       <h1 class="mb-5 font-semibold">Notas diarias!</h1>
       <div>
         <p>IMB: {{ calculoImb }}</p>
-        <p v-if="consumidas">Total Calorias Diarias: {{ totalCaloriasDiarias }}</p>
+        <p v-if="consumidas">
+          Total Calorias Diarias: {{ totalCaloriasDiarias }}
+        </p>
       </div>
       <div class="grid border-2 p-5 justify-center">
-          <p>Edad: {{ notas.edad }}</p>
-          <p>Peso: {{ notas.peso }}</p>
-          <p>Altura: {{ notas.altura }}</p>
-          <p>Calorias Quemadas: {{ notas.quemadas }}</p>
-          <p v-if="consumidas">Calorias Consumidas:{{ notas.consumidas }}</p>
+        <p>Edad: {{ notas.edad }}</p>
+        <p>Peso: {{ notas.peso }}</p>
+        <p>Altura: {{ notas.altura }}</p>
+        <p>Calorias Quemadas: {{ notas.quemadas }}</p>
+        <p v-if="consumidas">Calorias Consumidas:{{ notas.consumidas }}</p>
       </div>
     </div>
   </div>

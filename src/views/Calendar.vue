@@ -120,11 +120,17 @@ export default {
       );
     },
     async getMonthInfo() {
-      this.notas = await getData(`/notas/years/${this.year}/${this.month + 1}`);
+      this.notas =
+        (await getData(`/notas/years/${this.year}/${this.month + 1}`)) || {};
     },
   },
   mounted() {
     this.getMonthInfo();
+  },
+  watch: {
+    month() {
+      this.getMonthInfo();
+    },
   },
 };
 </script>
