@@ -120,16 +120,28 @@ export default {
       );
     },
     async getMonthInfo() {
+<<<<<<< HEAD
       this.notas = (await getData(`/notas/years/${this.year}/${this.month + 1}`)) || {};
+=======
+      this.notas =
+        (await getData(`/notas/years/${this.year}/${this.month + 1}`)) || {};
+>>>>>>> d5f048c3d707481a253ba1976557a6d09271c8f6
     },
   },
   mounted() {
     this.getMonthInfo();
   },
   watch: {
+<<<<<<< HEAD
     month(){
       this.getMonthInfo()
     }
   }
+=======
+    month() {
+      this.getMonthInfo();
+    },
+  },
+>>>>>>> d5f048c3d707481a253ba1976557a6d09271c8f6
 };
 </script>
