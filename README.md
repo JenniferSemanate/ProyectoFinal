@@ -1,3 +1,4 @@
+
 # Proyecto Final : Energy Power Fitness
 
 Para el desarrollo de este proyecto hemos utilizado el framework VUE, Vite, Router, Tailwind y Firebase para el almacenamiento de datos.
@@ -20,17 +21,22 @@ Aunque el desarrollo se ha realizado para el entorno web, la idea a largo plazo 
 
 - Consumir datos de la API Edamam y mostrarlos de manera atractiva. Además, de utilizarlos para realizar cálculos.
 
-## Configuración!
+## Configuración
 
-### Vistas:
+Ejecuta `npm install` para instalar los paquetes (packages)
 
+Ejecuta `npm run dev` para ejecutar el servidor de desarrollo
+
+## Vistas
+
+### Home
 
 ![home](https://user-images.githubusercontent.com/99184405/163124156-9b1a961a-f14a-4121-922b-27bba06a2c4c.png)
 
-![Notas] (support/home.png)!
+### Notas
+![Notas](https://user-images.githubusercontent.com/99184405/163129503-63e8ffd7-b114-4413-951d-1b2fd7fac72f.png)
 
-![Menús] (support/menus.png)
-
+### Menús
 ![menus](https://user-images.githubusercontent.com/99184405/163124261-7535b36f-c4a8-42ff-a0f1-158d9788159d.png)
 
 # Recursos
