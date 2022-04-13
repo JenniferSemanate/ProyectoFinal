@@ -25,7 +25,7 @@ Aunque el desarrollo se ha realizado para el entorno web, la idea a largo plazo 
 ### Vistas:
 
 
-[home](https://user-images.githubusercontent.com/99184405/163124156-9b1a961a-f14a-4121-922b-27bba06a2c4c.png)
+![home](https://user-images.githubusercontent.com/99184405/163124156-9b1a961a-f14a-4121-922b-27bba06a2c4c.png)
 
 ![Notas] (support/home.png)!
 
