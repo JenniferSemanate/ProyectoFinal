@@ -27,6 +27,11 @@ Ejecuta `npm install` para instalar los paquetes (packages)
 
 Ejecuta `npm run dev` para ejecutar el servidor de desarrollo
 
+## Diagrama
+
+![diagrama](https://user-images.githubusercontent.com/99184405/163130129-f605b572-4ef0-4e0e-9cf3-3b19d3672600.png)
+
+
 ## Vistas
 
 ### Home
