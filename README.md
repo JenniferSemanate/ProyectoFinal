@@ -20,21 +20,18 @@ Aunque el desarrollo se ha realizado para el entorno web, la idea a largo plazo 
 
 - Consumir datos de la API Edamam y mostrarlos de manera atractiva. Además, de utilizarlos para realizar cálculos.
 
-## Configuración
-
-Ejecuta `npm install` para instalar los paquetes (packages)
-
-Ejecuta `npm run dev` para ejecutar el servidor de desarrollo
-
-## Estructura de la Aplicación
+## Configuración!
 
 ### Vistas:
 
-![Calendar] (support/home.png)
 
-![Notas] (support/home.png)
+![home](https://user-images.githubusercontent.com/99184405/163124156-9b1a961a-f14a-4121-922b-27bba06a2c4c.png)
+
+![Notas] (support/home.png)!
 
 ![Menús] (support/menus.png)
+
+![menus](https://user-images.githubusercontent.com/99184405/163124261-7535b36f-c4a8-42ff-a0f1-158d9788159d.png)
 
 # Recursos
 
